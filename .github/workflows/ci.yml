@@ -49,5 +49,5 @@ jobs:
         run: npm install
 
       - name: Build frontend
-        run: npm run dev
+        run: npm run build
         working-directory: frontend
