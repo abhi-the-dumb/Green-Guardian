@@ -1,0 +1,19 @@
+# Use Python base image
+FROM python:3.11
+
+# Set work directory
+WORKDIR /app
+
+# Install dependencies
+COPY backend/requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Copy backend code
+COPY backend/ .
+
+# Expose port
+EXPOSE 8000
+
+# Run Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
