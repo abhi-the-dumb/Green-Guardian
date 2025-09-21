@@ -13,21 +13,14 @@ jobs:
       run:
         working-directory: backend
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.13"   # upgrade from 3.11 to 3.13
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r requirements.txt
+      - run: python manage.py check
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run Django checks
-        run: python manage.py check
 
   frontend:
     runs-on: ubuntu-latest
