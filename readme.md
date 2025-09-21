@@ -60,27 +60,7 @@ pip install -r requirements.txt
 cd ..
 ```
 
-### 3. Environment variables
-
-Create a `.env` in the project root using `.env.example` as a template:
-
-```bash
-cp .env.example .env
-```
-
-Fill in your API keys (each teammate must use their own):
-
-```env
-OPEN_WEATHER_API_KEY=your_key_here
-GROQ_API_KEY=your_key_here
-CEDA_API_KEY=your_key_here
-MEERSENS_API_KEY=your_key_here
-API_KEY_DATA_GOV=your_key_here
-```
-
-⚠️ `.env` is already in `.gitignore` → **never commit your keys**.
-
-### 4. Run the project
+### 3. Run the project
 
 From the project root:
 
